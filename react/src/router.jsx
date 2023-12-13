@@ -5,40 +5,49 @@ import Login from "./views/Login";
 import NotFound from "./views/NotFound";
 import Signup from "./views/Signup";
 import Profile from "./views/Profile.jsx";
+import TaskForm from "./views/TaskForm.jsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <DefaultLayout/>,
+    path: "/",
+    element: <DefaultLayout />,
     children: [
       {
-        path: '/',
-        element: <Navigate to="/profile"/>
+        path: "/",
+        element: <Navigate to="/profile" />,
       },
       {
-        path: '/profile',
-        element: <Profile/>
+        path: "/profile",
+        element: <Profile />,
       },
-    ]
+      {
+        path: "/tasks/new",
+        element: <TaskForm key="taskCreate" />,
+      },
+      {
+        path: "/tasks/:id",
+        element: <TaskForm key="taskUpdate" />,
+      },
+    ],
   },
   {
-    path: '/',
-    element: <GuestLayout/>,
+    path: "/",
+    element: <GuestLayout />,
     children: [
       {
-        path: '/login',
-        element: <Login/>
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/signup',
-        element: <Signup/>
-      }
-    ]
+        path: "/signup",
+        element: <Signup />,
+      },
+    ],
   },
   {
     path: "*",
-    element: <NotFound/>
-  }
-])
+    element: <NotFound />,
+  },
+]);
 
 export default router;

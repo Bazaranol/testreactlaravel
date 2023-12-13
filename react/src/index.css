@@ -36,7 +36,7 @@ input:focus {
     border-color: #5b08a7;
 }
 
-.btn{
+.btn, .btn-edit, .btn-delete, .btn-add{
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #5b08a7;
@@ -45,16 +45,27 @@ input:focus {
     padding: 15px;
     color: #FFFFFF;
     font-size: 16px;
-    -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+}
+.btn-add {
+    background-color: #00a762;
+}
+.btn-delete {
+    background-color: #b72424;
 }
 
 .btn-block {
     width: 100%;
 }
 
-
+.btn-add,
+.btn-edit,
+.btn-delete{
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    border-radius: 4px;
+}
 
 .btn-logout {
     text-decoration: none;
@@ -72,11 +83,28 @@ input:focus {
 .btn:focus {
     background: #5b08a7;
 }
+.d-flex {
+display: flex;
+}
 
 .text-center {
     text-align: center;
 }
+.items-center{
+    justify-content: center;
+    align-items: center;
+}
 
+.text-start {
+    justify-content: flex-start;
+}
+
+.text-end {
+    justify-content: flex-end;
+}
+.space-between{
+    justify-content: space-between;
+}
 table {
     width: 100%;
     border-spacing: 0;
@@ -89,7 +117,10 @@ table > tbody > tr > td {
     border-bottom: 1px solid #efefef;
     white-space: nowrap;
 }
-
+.table-header{
+    padding-left: 20px;
+    max-width: 90%;
+}
 .card {
     background-color: #FFF;
     border-radius: 0.5rem;
@@ -97,8 +128,17 @@ table > tbody > tr > td {
     padding: 1.25rem 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+    width: 100%;
 }
-
+.table-tasks{
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.task-item{
+    width: 33%;
+}
 .alert {
     padding: 1rem;
     background-color: #ff4040;
@@ -192,6 +232,17 @@ table > tbody > tr > td {
     animation-name: fadeInDown;
 }
 
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -202,3 +253,4 @@ table > tbody > tr > td {
         transform: translateY(0);
     }
 }
+
